@@ -17,8 +17,10 @@ services:
       - ./src:/var/www/
 
   mysql:
-    image: mysql:8.0.26
+    image: mysql:latest
+    platform: linux/amd64
     environment:
+      MYSQL_ROOT_HOST: '%'
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: laravel_db
       MYSQL_USER: laravel_user
